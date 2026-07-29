@@ -26,7 +26,7 @@
             <section class="hero-section">
                 <span class="badge-welcome">Welcome to my</span>
                 <h1>PORTFOLIO</h1>
-                <p>Bella Angeline R. — Siswa RPL di SMKN 10 Jakarta dengan minat pada UI/UX Design dan Frontend Development.</p>
+                <p>Siswa RPL di SMKN 10 Jakarta dengan minat pada UI/UX Design dan Frontend Development.</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn-yellow">View Projects</a>
                     <a href="#profile" class="btn-blue">About Me</a>
@@ -36,7 +36,7 @@
             <section id="profile" class="section-block top-grid">
                 <div class="polaroid-card">
                     <div class="photo-container">
-                        <img src="https://via.placeholder.com/300x350" alt="Bella Angeline R.">
+                        <img src="images/merah.jpg" alt="Bella Angeline R.">
                     </div>
                     <div class="polaroid-text">
                         <span>UI/UX & FRONTEND</span>
@@ -88,7 +88,7 @@
                     <div class="project-card">
                         <span class="project-tag">Rental App</span>
                         <h3>Mirage Vault</h3>
-                        <p>Aplikasi untuk menjual stiker fisik.</p>
+                        <p>Aplikasi untuk sewa pakaian.</p>
                         <ul class="tech-stack">
                             <li>Java</li>
                             <li>Kotlin</li>
@@ -99,10 +99,23 @@
 
             <section id="projects" class="section-block">
                 <div class="pill-title title-center">OTHER PROJECTS</div>
-                <div class="skills-wrapper">
-                    <div class="badge-sticker sticker-yellow">Digital Bible App</div>
-                    <div class="badge-sticker sticker-blue">Hangman Game</div>
-                    <div class="badge-sticker sticker-yellow">Personal Bio Website</div>
+                <p class="folder-instruction">Click any folder to view project image</p>
+                
+                <div class="folder-gallery">
+                    <div class="folder-item" onclick="openModal('images/Bible.png', 'Digital Bible App')">
+                        <div class="folder-icon">📁</div>
+                        <span class="folder-name">01. Digital Bible App</span>
+                    </div>
+
+                    <div class="folder-item" onclick="openModal('images/hangman.png', 'Hangman Game')">
+                        <div class="folder-icon">📁</div>
+                        <span class="folder-name">02. Hangman Game</span>
+                    </div>
+
+                    <div class="folder-item" onclick="openModal('images/bio.jpeg', 'Personal Bio Website')">
+                        <div class="folder-icon">📁</div>
+                        <span class="folder-name">03. Personal Bio Web</span>
+                    </div>
                 </div>
             </section>
 
@@ -151,6 +164,28 @@
         <a href="#home" class="btn-back-top">^ Top</a>
 
     </div>
+
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        function openModal(imageSrc, captionText) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("modalImg");
+            var caption = document.getElementById("caption");
+            
+            modal.style.display = "flex";
+            modalImg.src = imageSrc;
+            caption.innerHTML = captionText;
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
